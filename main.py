@@ -8,19 +8,22 @@ id = 1
 
 def main():
     while(True):
-        choice = menu()        
-        if choice == 1:    
-            add_task()
-        if choice == 2:
-            finish_task()
-        if choice == 3:
-            delete_task()
-        if choice == 4:
-            show_accomplished_tasks()
-        if choice == 5:
-            show_tasks()
-        if choice == 6:
-            break
+        try:
+            choice = menu()        
+            if choice == 1:    
+                add_task()
+            if choice == 2:
+                finish_task()
+            if choice == 3:
+                delete_task()
+            if choice == 4:
+                show_accomplished_tasks()
+            if choice == 5:
+                show_tasks()
+            if choice == 6:
+                break            
+        except:
+            print("Favor digitar um numero valido da lista")
 
 def menu():
     for i in range(0,len(lista)):
