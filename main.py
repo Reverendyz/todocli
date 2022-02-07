@@ -3,7 +3,7 @@
 from task import Task
 
 lista = ['Adicionar tarefa', 'Concluir tarefa', 'Deletar tarefa', 'Mostrar Tarefas', 'Sair']
-lista_tarefas = []
+task_list = []
 id = 1
 
 def menu():
@@ -16,23 +16,22 @@ def add_task():
     global id
     title = input("Nome da tarefa: ")
     description = input("Descricao da tarefa: ")
-    lista_tarefas.append({
-        id,
-        title,
-        description
-    })
+    obj = {id, "[  ]", title, description}
+    task_list.append(obj)
     id += 1
 
 def finish_task():
-    print("finalizado")
+    show_tasks()
+    task_to_accomplish = (int(input("Escolha qual tarefa deseja finalizar: ")))
 
 def show_tasks():
-    print(lista_tarefas)
+    for task in task_list:
+        print(task)
 
 def delete_task():
     show_tasks()
     task_to_delete = (int(input("Escolha qual tarefa deseja deletar: ")))
-    lista_tarefas.pop(task_to_delete-1)
+    task_list.pop(task_to_delete-1)
     show_tasks()
 
 while(True):
